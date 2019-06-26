@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyGeneraterScirpt : MonoBehaviour {
 
   float time = 0;
-  float span = 2.0f;
+  float span = 0.5f;
   public GameObject Enemy;
   int[] instancePosition = { 1, 2, 3, 4 }; //敵生成位置、１上、２右、３下、４左
 

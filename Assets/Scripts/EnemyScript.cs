@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour {
   Rigidbody2D rigid2d;
   GameObject player;
   public float speed = 1.0f;
+  public GameObject bodyCollider;
 
   void Start() {
     animator = GetComponent<Animator>();
@@ -37,6 +38,7 @@ public class EnemyScript : MonoBehaviour {
     if (col.gameObject.tag == "PlayerAttack") {
       Destroy(col.gameObject);
       this.alive = false;
+      this.bodyCollider.SetActive(false);
       animator.SetTrigger("Dead");
     }
   }
