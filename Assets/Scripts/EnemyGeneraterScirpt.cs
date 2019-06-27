@@ -6,6 +6,7 @@ public class EnemyGeneraterScirpt : MonoBehaviour {
 
   float time = 0;
   float span = 0.5f;
+  float generateTime = 0;
   public GameObject Enemy;
   int[] instancePosition = { 1, 2, 3, 4 }; //敵生成位置、１上、２右、３下、４左
 
@@ -40,6 +41,30 @@ public class EnemyGeneraterScirpt : MonoBehaviour {
       //敵生成
       GameObject instanceEnemy = Instantiate(Enemy) as GameObject;
       instanceEnemy.transform.position = new Vector2(x, y);
+    }
+
+    //時間経過で敵の生成スピードあげていく
+    generateTime += Time.deltaTime;
+    if (generateTime > 35.0f) {
+      span = 0.3f;
+    }
+    else if (generateTime > 25.0f) {
+      span = 0.5f;
+    }
+    else if (generateTime > 20.0f) {
+      span = 0.6f;
+    }
+    else if (generateTime > 15.0f) {
+      span = 0.8f;
+    }
+    else if (generateTime > 10.0f) {
+      span = 1.0f;
+    }
+    else if (generateTime > 5.0f) {
+      span = 1.2f;
+    }
+    else if (generateTime > 1.0f) {
+      span = 1.5f;
     }
   }
 }
