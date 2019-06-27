@@ -39,8 +39,11 @@ public class EnemyGeneraterScirpt : MonoBehaviour {
         y = Random.Range(-14.09f, -25.96f);
       }
       //敵生成
-      GameObject instanceEnemy = Instantiate(Enemy) as GameObject;
-      instanceEnemy.transform.position = new Vector2(x, y);
+      var parent = this.transform;
+      if (this.transform.childCount < 60) {
+        GameObject instanceEnemy = Instantiate(Enemy, parent) as GameObject;
+        instanceEnemy.transform.position = new Vector2(x, y);
+      }
     }
 
     //時間経過で敵の生成スピードあげていく
