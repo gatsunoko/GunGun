@@ -11,11 +11,13 @@ public class GameControllerScript : MonoBehaviour {
   float masterTime = 0;
   public GameObject timeView;
   Text timeText;
+  public GameObject againButton;
 
   void Start() {
     Player = PlayerScript.playerScript.gameObject;
     playerScript = PlayerScript.playerScript;
     gameOverTextObject.SetActive(false);
+    againButton.SetActive(false);
     timeText = timeView.GetComponent<Text>();
   }
 
@@ -27,6 +29,7 @@ public class GameControllerScript : MonoBehaviour {
     else {
       Player.SetActive(false);
       gameOverTextObject.SetActive(true);
+      againButton.SetActive(true);
     }
   }
 }
