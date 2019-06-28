@@ -95,8 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559719ae3cfa44c18b637cc3a113c3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5334415208287011006, guid: afe1d72b2c5b94f3a99b20290a7da0a4, type: 3}
+  bullet:
+  - {fileID: 5334415208287011006, guid: afe1d72b2c5b94f3a99b20290a7da0a4, type: 3}
+  - {fileID: 8224688070612939328, guid: 9770dd1660c68324d9ff88099ddaf0f0, type: 3}
   alive: 1
+  currentWepon: 0
 --- !u!50 &4098357427114498505
 Rigidbody2D:
   serializedVersion: 4
