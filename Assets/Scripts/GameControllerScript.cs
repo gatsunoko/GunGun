@@ -12,6 +12,8 @@ public class GameControllerScript : MonoBehaviour {
   public GameObject timeView;
   Text timeText;
   public GameObject againButton;
+  AudioSource dead_sound;
+  bool deadAfter = false;//死亡した後一回だけ実行する部分を実行したかどうか
 
   void Start() {
     Player = PlayerScript.playerScript.gameObject;
@@ -19,6 +21,8 @@ public class GameControllerScript : MonoBehaviour {
     gameOverTextObject.SetActive(false);
     againButton.SetActive(false);
     timeText = timeView.GetComponent<Text>();
+    AudioSource[] audioSources = GetComponents<AudioSource>();
+    dead_sound = audioSources[0];
   }
 
   void Update() {
@@ -27,9 +31,13 @@ public class GameControllerScript : MonoBehaviour {
       timeText.text = masterTime.ToString();
     }
     else {
-      Player.SetActive(false);
-      gameOverTextObject.SetActive(true);
-      againButton.SetActive(true);
+      if (!deadAfter) {
+        deadAfter = true;
+        Player.SetActive(false);
+        gameOverTextObject.SetActive(true);
+        againButton.SetActive(true);
+        dead_sound.PlayOneShot(dead_sound.clip);
+      }
     }
   }
 }

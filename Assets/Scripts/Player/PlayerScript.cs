@@ -11,13 +11,12 @@ public class PlayerScript : MonoBehaviour {
   private Vector3 screenToWorldPointPosition;// スクリーン座標をワールド座標に変換した位置座標
   public bool alive = true;
   float machinegunTime = 0;
-  
+
   void Awake() {
     playerScript = this;
   }
 
   void Start() {
-
   }
 
   void Update() {
