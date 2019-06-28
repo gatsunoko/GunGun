@@ -7,7 +7,7 @@ public class EnemyGeneraterScirpt : MonoBehaviour {
   float time = 0;
   float span = 0.5f;
   float generateTime = 0;
-  public GameObject Enemy;
+  public GameObject[] Enemies;
   int[] instancePosition = { 1, 2, 3, 4 }; //敵生成位置、１上、２右、３下、４左
 
   void Start() {
@@ -38,6 +38,9 @@ public class EnemyGeneraterScirpt : MonoBehaviour {
         x = -9.66f;
         y = Random.Range(-14.09f, -25.96f);
       }
+      //生成する敵をランダムで選ぶ
+      int enemyI = Random.Range(0, Enemies.Length);
+      GameObject Enemy = Enemies[enemyI];
       //敵生成
       var parent = this.transform;
       if (this.transform.childCount < 60) {
@@ -48,7 +51,28 @@ public class EnemyGeneraterScirpt : MonoBehaviour {
 
     //時間経過で敵の生成スピードあげていく
     generateTime += Time.deltaTime;
-    if (generateTime > 35.0f) {
+    if (generateTime > 75.0f) {
+      span = 0.10f;
+    }
+    else if (generateTime > 70.0f) {
+      span = 0.13f;
+    }
+    else if (generateTime > 65.0f) {
+      span = 0.15f;
+    }
+    else if (generateTime > 60.0f) {
+      span = 0.18f;
+    }
+    else if (generateTime > 50.0f) {
+      span = 0.21f;
+    }
+    else if (generateTime > 45.0f) {
+      span = 0.23f;
+    }
+    else if (generateTime > 40.0f) {
+      span = 0.25f;
+    }
+    else if (generateTime > 35.0f) {
       span = 0.3f;
     }
     else if (generateTime > 25.0f) {
