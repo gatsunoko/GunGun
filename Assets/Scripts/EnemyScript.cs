@@ -36,7 +36,6 @@ public class EnemyScript : MonoBehaviour {
 
   private void OnTriggerEnter2D(Collider2D col) {
     if (col.gameObject.tag == "PlayerAttack") {
-      Destroy(col.gameObject);
       this.alive = false;
       this.bodyCollider.SetActive(false);
       animator.SetTrigger("Dead");

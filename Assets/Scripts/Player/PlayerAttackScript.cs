@@ -21,4 +21,10 @@ public class PlayerAttackScript : MonoBehaviour {
       Destroy(this.gameObject);
     }
   }
+
+  private void OnTriggerEnter2D(Collider2D col) {
+    if (col.gameObject.tag == "Enemy") {
+      Destroy(gameObject);
+    }
+  }
 }

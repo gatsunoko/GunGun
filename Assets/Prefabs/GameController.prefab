@@ -47,6 +47,7 @@ MonoBehaviour:
   gameOverTextObject: {fileID: 0}
   timeView: {fileID: 0}
   againButton: {fileID: 0}
+  bomCount: 0
 --- !u!82 &8767350818647040964
 AudioSource:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class GameControllerScript : MonoBehaviour {
   public GameObject againButton;
   AudioSource dead_sound;
   bool deadAfter = false;//死亡した後一回だけ実行する部分を実行したかどうか
+  public int bomCount = 0;
 
   void Start() {
     Player = PlayerScript.playerScript.gameObject;
