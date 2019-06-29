@@ -10,6 +10,8 @@ public class EnemyScript : MonoBehaviour {
   GameObject player;
   public float speed = 1.0f;
   public GameObject bodyCollider;
+  public float dropProbability = 10.0f;
+  public GameObject[] dropItem;
 
   void Start() {
     animator = GetComponent<Animator>();
@@ -39,6 +41,16 @@ public class EnemyScript : MonoBehaviour {
       this.alive = false;
       this.bodyCollider.SetActive(false);
       animator.SetTrigger("Dead");
+      //アイテムドロップするかどうか判定
+      float isDrop = Random.Range(0, 100.0f);
+      if (isDrop <= dropProbability) {
+        //ドロップアイテム生成
+        if (dropItem.Length > 0) {
+          int itemNum = Random.Range(0, dropItem.Length);
+          GameObject item = Instantiate(dropItem[itemNum]) as GameObject;
+          item.transform.position = transform.position;
+        }
+      }
     }
   }
 
