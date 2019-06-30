@@ -15,6 +15,8 @@ public class GameControllerScript : MonoBehaviour {
   AudioSource dead_sound;
   bool deadAfter = false;//死亡した後一回だけ実行する部分を実行したかどうか
   public int bomCount = 0;
+  public GameObject machinegunBulletView;
+  Text machineguneBulletText;
 
   void Start() {
     Player = PlayerScript.playerScript.gameObject;
@@ -24,12 +26,14 @@ public class GameControllerScript : MonoBehaviour {
     timeText = timeView.GetComponent<Text>();
     AudioSource[] audioSources = GetComponents<AudioSource>();
     dead_sound = audioSources[0];
+    machineguneBulletText = machinegunBulletView.GetComponent<Text>();
   }
 
   void Update() {
     if (playerScript.alive) {
       masterTime += Time.deltaTime;
       timeText.text = masterTime.ToString();
+      machineguneBulletText.text = playerScript.machinegunBullet.ToString();
     }
     else {
       if (!deadAfter) {

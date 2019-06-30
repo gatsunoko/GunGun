@@ -281,6 +281,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1920413177538206675}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1522318574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 136058504998990905, guid: 61a0ba870d77e4923a09ce80b9eac8e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1920413177538206675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1524116689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 675380016166044973, guid: ebf797e1f1cee4692be1e5800bda6218,
@@ -403,6 +409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083116424958942487, guid: 61a0ba870d77e4923a09ce80b9eac8e0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.20000076
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61a0ba870d77e4923a09ce80b9eac8e0, type: 3}
@@ -734,5 +745,10 @@ PrefabInstance:
       propertyPath: againButton
       value: 
       objectReference: {fileID: 964726627}
+    - target: {fileID: 6152621373889400858, guid: 541de524bb4960a419a9acf77ffa2f8f,
+        type: 3}
+      propertyPath: machinegunBulletView
+      value: 
+      objectReference: {fileID: 1522318574}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 541de524bb4960a419a9acf77ffa2f8f, type: 3}

@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour {
   private Vector3 screenToWorldPointPosition;// スクリーン座標をワールド座標に変換した位置座標
   public bool alive = true;
   float machinegunTime = 0;
+  public int machinegunBullet = 0;
   public int currentWepon = 0;
 
   void Awake() {
@@ -30,6 +31,14 @@ public class PlayerScript : MonoBehaviour {
       var vec = (target - transform.position).normalized;
       var angle = (Mathf.Atan2(vec.y, vec.x) * Mathf.Rad2Deg);
       transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
+
+      //マシンガンの残り弾があればマシンガンにする
+      if (machinegunBullet > 0) {
+        currentWepon = 1;
+      }
+      else {
+        currentWepon = 0;
+      }
 
       if (currentWepon == 0) {
         if (Input.GetMouseButtonDown(0)) {
@@ -62,6 +71,7 @@ public class PlayerScript : MonoBehaviour {
   }
 
   void Machinegun() {
+    machinegunBullet -= 1;
     var parent = this.transform;
     GameObject shot = Instantiate(bullet[1], parent) as GameObject;
     if (transform.localScale.x > 0) {

@@ -21,6 +21,7 @@ public class BulletChanger : MonoBehaviour {
   private void OnTriggerEnter2D(Collider2D col) {
     if (col.gameObject.tag== "PlayerAttack") {
       playerScript.currentWepon = bulletNumber;
+      playerScript.machinegunBullet += 100;
       animator.SetTrigger("Dead");
     }
   }

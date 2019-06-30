@@ -100,7 +100,7 @@ MonoBehaviour:
   alive: 1
   speed: 1
   bodyCollider: {fileID: 6088992705273614485}
-  dropProbability: 10
+  dropProbability: 5
   dropItem:
   - {fileID: 991520976159192880, guid: c694563519b2f644eb111079dcae3f68, type: 3}
 --- !u!50 &2124384912798487152
