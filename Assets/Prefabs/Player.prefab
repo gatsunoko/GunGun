@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 2057304359
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 82f38af6868074be88bda1f4ff7fc5ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 988153d7c430fbd4e949f6236b4eb0f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   - {fileID: 5334415208287011006, guid: afe1d72b2c5b94f3a99b20290a7da0a4, type: 3}
   - {fileID: 8224688070612939328, guid: 9770dd1660c68324d9ff88099ddaf0f0, type: 3}
   alive: 1
+  machinegunBullet: 0
   currentWepon: 0
 --- !u!50 &4098357427114498505
 Rigidbody2D:
@@ -134,18 +135,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.70912987, y: 0.0012865067}
+  m_Offset: {x: 0.38319272, y: 0.0012865067}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.0021768361, y: 0.46583334}
-    oldSize: {x: 1.47, y: 0.48}
+    pivot: {x: 0.3070115, y: 0.71468526}
+    oldSize: {x: 1.5, y: 1.5}
     newSize: {x: 1.47, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4246596, y: 0.0971241}
+  m_Size: {x: 0.9584913, y: 0.0971241}
   m_EdgeRadius: 0
 --- !u!82 &1312437723
 AudioSource:

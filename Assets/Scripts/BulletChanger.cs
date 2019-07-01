@@ -8,6 +8,7 @@ public class BulletChanger : MonoBehaviour {
   PlayerScript playerScript;
   public int bulletNumber = 0;
   Animator animator;
+  bool alreadyGet = false;
 
   void Start() {
     Player = PlayerScript.playerScript.gameObject;
@@ -20,9 +21,11 @@ public class BulletChanger : MonoBehaviour {
 
   private void OnTriggerEnter2D(Collider2D col) {
     if (col.gameObject.tag== "PlayerAttack") {
-      playerScript.currentWepon = bulletNumber;
-      playerScript.machinegunBullet += 100;
-      animator.SetTrigger("Dead");
+      if (!alreadyGet) {
+        alreadyGet = true;
+        playerScript.machinegunBullet += 100;
+        animator.SetTrigger("Dead");
+      }
     }
   }
 

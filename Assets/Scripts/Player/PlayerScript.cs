@@ -64,7 +64,7 @@ public class PlayerScript : MonoBehaviour {
     var parent = this.transform;
     GameObject shot = Instantiate(bullet[0], parent) as GameObject;
     if (transform.localScale.x > 0) {
-      shot.transform.localPosition = new Vector2(1.386f, 0);
+      shot.transform.localPosition = new Vector2(1.014f, 0);
       shot.transform.SetParent(null);//親子関係解消
       shot.transform.rotation = transform.rotation;
     }
@@ -75,7 +75,7 @@ public class PlayerScript : MonoBehaviour {
     var parent = this.transform;
     GameObject shot = Instantiate(bullet[1], parent) as GameObject;
     if (transform.localScale.x > 0) {
-      shot.transform.localPosition = new Vector2(1.386f, 0);
+      shot.transform.localPosition = new Vector2(1.014f, 0);
       shot.transform.SetParent(null);//親子関係解消
       shot.transform.rotation = transform.rotation;
     }
